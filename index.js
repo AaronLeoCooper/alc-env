@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * Helper to get environment variables
  * Searches for envs first in CLI arguments, secondly in package.json config
@@ -6,14 +8,19 @@
  * @param {any} defaultValue - If none of the env variables are found by name, return this value
  */
 function alcEnv (varNames, defaultValue) {
-  if (!varNames) return null
+  var output = undefined
+
+  // Handle undefined defaultValue
+  defaultValue = typeof defaultValue === 'undefined'
+    ? null
+    : defaultValue
+
+  if (!varNames) return defaultValue
 
   // Normalise varName into an array
   if (typeof varNames === 'string') {
     varNames = [varNames]
   }
-
-  var output = undefined
 
   varNames.forEach(function (thisVarName) {
     if (output !== undefined) return // Don't proceed if output already assigned
@@ -35,12 +42,7 @@ function alcEnv (varNames, defaultValue) {
 
   if (output !== undefined) return output // Output was assigned, return it
 
-  // Output wasn't assigned, return the default value if specified
-  if (typeof defaultValue !== 'undefined') {
-    return defaultValue
-  }
-
-  return null // No default was provided, last resort return null
+  return defaultValue // Last resort, return defaultValue
 }
 
 module.exports = alcEnv

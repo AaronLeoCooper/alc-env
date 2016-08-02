@@ -4,7 +4,7 @@
   "description": "A dependable, simple means of getting ENV variables",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests"
+    "test": "nyc mocha tests"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,20 @@
   },
   "homepage": "https://github.com/AaronLeoCooper/alc-env#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.2.2",
     "eslint-config-standard": "^5.3.5",
     "eslint-plugin-promise": "^2.0.0",
-    "eslint-plugin-standard": "^2.0.0"
+    "eslint-plugin-standard": "^2.0.0",
+    "mocha": "^3.0.0",
+    "nyc": "^7.1.0",
+    "require-uncached": "^1.0.2",
+    "sinon": "^1.17.5"
+  },
+  "dependencies": {},
+  "nyc": {
+    "exclude": [
+      "tests/*"
+    ]
   }
 }
