@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/AaronLeoCooper/alc-env/issues"
   },
-  "homepage": "https://github.com/AaronLeoCooper/alc-env#readme"
+  "homepage": "https://github.com/AaronLeoCooper/alc-env#readme",
+  "devDependencies": {
+    "eslint": "^3.2.2",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.0"
+  }
 }
