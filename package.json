@@ -1,0 +1,24 @@
+{
+  "name": "alc-env",
+  "version": "1.0.0",
+  "description": "A dependable, simple means of getting ENV variables",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronLeoCooper/alc-env.git"
+  },
+  "keywords": [
+    "node",
+    "env",
+    "npm"
+  ],
+  "author": "Aaron Leo Cooper <aaronleocooper@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/AaronLeoCooper/alc-env/issues"
+  },
+  "homepage": "https://github.com/AaronLeoCooper/alc-env#readme"
+}
