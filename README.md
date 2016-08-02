@@ -10,9 +10,22 @@ I decided I didn't want to only rely on variables being passed via the CLI
 at runtime. That's why I wrote this simple reusable script to look for my
 ENVs wherever they're defined and whatever they're named.
 
+## Compatibility
+| OS                 | Will it work? |
+| ------------------ | ------------- |
+| Mac OSX            | Yes           |
+| Linux              | Yes           |
+| Windows            | Maybe..?      |
+| Anything with Bash | Probably      |
+
+Only tested with Node 6.2+, but will probably work with 4 and possibly lower.
+
+Usage with a front-end app is only recommended if you're using a plugin to
+support CommonJS or ES6 imports, or a build tool that bundles modules.
+
 ## How
 
-### Install:
+### Install & add to your existing project:
 ```
 npm i --save alc-env
 ```
@@ -38,7 +51,7 @@ import env from 'alc-env'
 env_name="env value" npm start
 ```
 
-### Use your ENVs freely:
+### Call your ENVs freely and safely:
 ```js
 // Get env variable or return a default value if it's not defined
 var envA = env('env_name', 'default value');
@@ -70,7 +83,15 @@ ENVs set from the CLI or from Dockerfiles weren't present.
 
 There's other ENV "management" modules up on NPM and Github, but I couldn't find one
 that was in quite this category of providing a fallback to use the `package.json`
-properties. 
+properties.
+
+## Dependencies
+Nothing inside the `package.json` is mandatory, I've only used unimportant
+`devDependencies` to standardise the versions of ESLint & its plugins that
+I use for code cleanliness. To keep a production build minimal in your app
+it's safe to use the `--production` flag with this module. I can't vouch for
+other dependencies your project has however, so use the production flag at
+your own risk. 
 
 ## Todo
 - Add support for custom named `package.json` parameters as secondary ENV source
